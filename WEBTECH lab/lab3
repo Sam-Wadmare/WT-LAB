@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab3</title>
+    <script src="./lab3.js"></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <button onclick="alert('Button clicked!')">Click Me</button>
+<hr>
+    <h1>
+		Good Afternoon!!
+	</h1>
+
+    <h2>
+		OnMouse Over Event
+	</h2>
+
+    <p onmouseover="newevent()">
+		WEB Tech lab
+	</p>
+    <hr>
+    <br>
+    <form id="formID" action="#"> 
+		Enter name: 
+		<input type="text" name="fname"> 
+		<input type="submit" value="Submit"> 
+	</form>
+    <hr>
+    <br>
+    <h2 id="changeit"> Change The Color of Text </h2>
+    <button onclick="myFunction()">Change it </button>
+    <br>
+    <hr>
+    <h2 > Change Background color </h2>
+    <button onclick="ChangeColor()">Change BG </button>
+<br>
+<hr>
+
+    <script> 
+        document.getElementById("formID").onsubmit = 
+            function() {Submitbutton()}; 
+        
+        function Submitbutton() { 
+            alert("form submitted"); 
+        } 
+    </script>
+</body>
+</html>
