@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <style>
+        .section {
+            background: white;
+            padding: 20px;
+            margin: 20px auto;
+            width: 300px;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        input {
+            padding: 10px;
+            margin: 5px;
+            width: 200px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="section">
+        <h2>calculator</h2>
+        <label for="">Enter First number: </label>
+        <input type="number" id="num1" placeholder="Enter first number"><br><br>
+        <label for="">Enter Second number: </label>
+        <input type="number" id="num2" placeholder="Enter second number"><br><br>
+        <label for="">Select Operation</label>
+        <button onclick="calc('+')">ADD</button>
+        <button onclick="calc('-')">SUB</button>
+        <button onclick="calc('*')">MULTI</button>
+        <button onclick="calc('/')">DIV</button>
+    </div>
+    <div class="section">
+        <h2>Celcius to Fahrenheit</h2>
+        <label for="">Enter Celcius: </label>
+        <input type="number" id="celcius" placeholder="Enter Celcius"><br><br>
+        <button onclick="convert()">Convert</button>
+    </div>
+    <div class="section">
+        <h2>INR to USD</h2>
+        <label for="">INR</label>
+        <input type="number" name="" id="inr">
+        <button onclick="convertCurrency()">Convert</button>
+    </div>
+    <script>
+        function calc(op) {
+            var a = document.getElementById("num1").value;
+            var b = document.getElementById("num2").value;
+
+            // Convert to numbers
+            a = parseFloat(a);
+            b = parseFloat(b);
+
+            var result = 0;
+
+            if (op == "+") {
+                result = a + b;
+            }
+            else if (op == "-") {
+                result = a - b;
+            }
+            else if (op == "*") {
+                result = a * b;
+            }
+            else if (op == "/") {
+                if (b === 0) {
+                    alert("Cannot divide by zero");
+                    return;
+                }
+                result = a / b;
+            }
+            else {
+                alert("Invalid operation");
+                return;
+            }
+
+            alert("Result is: " + result);
+        }
+
+
+        function convert() {
+            var celcius = document.getElementById("celcius".value);
+            var fahrenheit = (celcius * 9 / 5) + 32;
+            alert("Fahrenheit is: " + fahrenheit + "°F");
+        }
+
+        function convertCurrency() {
+            var inr = document.getElementById("inr").value;
+            var usd = inr / 83;
+            alert("USD is: " + usd + "$");
+        }
+    </script>
+</body>
+
+</html>
